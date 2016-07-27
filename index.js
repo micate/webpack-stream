@@ -5,7 +5,7 @@ var File = require('vinyl');
 var MemoryFileSystem = require('memory-fs');
 var through = require('through');
 var ProgressPlugin = require('webpack/lib/ProgressPlugin');
-var clone = require('lodash.clone');
+var extend = require('extend');
 var some = require('lodash.some');
 
 var defaultStatsOptions = {
@@ -34,7 +34,7 @@ module.exports = function (options, wp, done) {
   cache.options = options;
   cache.wp = wp;
 
-  options = clone(options) || {};
+  options = extend(true, {}, options);
   var config = options.config || options;
   if (typeof done !== 'function') {
     var callingDone = false;
@@ -209,8 +209,8 @@ module.exports = function (options, wp, done) {
 
   // If entry point manually specified, trigger that
   var hasEntry = Array.isArray(config)
-    ? some(config, function (c) { return c.entry; })
-    : config.entry;
+      ? some(config, function (c) { return c.entry; })
+      : config.entry;
   if (hasEntry) {
     stream.end();
   }

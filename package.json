@@ -1,15 +1,14 @@
 {
-  "name": "webpack-stream",
-  "version": "3.2.0",
-  "description": "Run webpack as a stream",
+  "name": "gulp-webpack-cache",
+  "version": "3.2.1",
+  "description": "Run webpack as a stream with cache problem resloved",
   "license": "MIT",
-  "homepage": "https://github.com/shama/webpack-stream",
-  "repository": "shama/webpack-stream",
-  "author": {
-    "name": "Kyle Robinson Young",
-    "email": "kyle@dontkry.com",
-    "url": "http://dontkry.com"
+  "homepage": "https://github.com/micate/webpack-stream",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micate/webpack-stream.git"
   },
+  "author": "micate",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -26,8 +25,8 @@
     ]
   },
   "dependencies": {
+    "extend": "^3.0.0",
     "gulp-util": "^3.0.7",
-    "lodash.clone": "^4.3.2",
     "lodash.some": "^4.2.2",
     "memory-fs": "^0.3.0",
     "through": "^2.3.8",
